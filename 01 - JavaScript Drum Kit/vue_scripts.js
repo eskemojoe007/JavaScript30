@@ -1,5 +1,6 @@
 var soundDiv = {
   props: ['item'],
+
   data: function() {
     return {
       isActive: false,
@@ -31,7 +32,7 @@ var soundDiv = {
     }
   },
 }
-var audioFile = {
+Vue.component('audio-file',{
   props: ['item'],
   template: `
     <audio :src="'sounds/' + item.sound + '.wav'"></audio>
@@ -91,7 +92,6 @@ var key_divs = new Vue({
   },
   components: {
     'sound-div': soundDiv,
-    'audio-file': audioFile,
   },
   methods: {
     keystroke: function(keyCode) {
